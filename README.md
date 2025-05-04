@@ -1,12 +1,13 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Идея: Електронен дневник с портали за ученици и учител
+Изготвили: Виктор Соколов, Снежана Георгиева
 
-Currently, two official plugins are available:
+Дребни инструкци: 
+Стартиране на Json server:  npx json-server --watch db.json --port 5000
+Стратиране на приложение: npm run dev 
+Лична бележка: добави хора в db.json
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Учител: SokolovV    Парола:dark6386
+Ученик: Viktor      Парола:dark6386
