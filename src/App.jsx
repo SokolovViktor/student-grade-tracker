@@ -1,25 +1,22 @@
-import LoginForm from './components/LoginForm.jsx';
-import RegisterForm from './components/RegisterForms.jsx';
-import StudentHome from './components/StudentHome.jsx';
-import TeacherHome from './components/TeacherHome.jsx';
-import Navbar from './components/Navbar.jsx';
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+import TeacherHome from './components/TeacherHome';
+import StudentHome from './components/StudentHome';
 
-function App() {
-  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user')));
-  
+const App = () => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={user ? <Navigate to="/dashboard" /> : <LoginForm />} />
-        <Route path="/login" element={<LoginForm setUser={setUser} />} />
+        <Route path="/" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/dashboard" element={user?.role === 'teacher' ? <TeacherHome /> : <StudentHome />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/teacher-home" element={<TeacherHome />} />
+        <Route path="/student-home" element={<StudentHome />} />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
 export default App;

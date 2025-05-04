@@ -1,39 +1,158 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "teacher1",
-      "password": "$2a$10$kDzKZLrpPf80BNcc9Ho9feGKl/6AQM5ynF3frhzTPm2vi2uOl/Olu",
-      "firstName": "John",
-      "lastName": "Smith",
-      "role": "teacher"
-    },
-    {
-      "id": 2,
-      "username": "student1",
-      "password": "$2a$10$YwFNEU6R8qI/9peI4ACZxOoCGX5zZlz0zHlO0Pv6uvVOX3RBgxe9C",
-      "firstName": "Jane",
-      "lastName": "Doe",
+      "id": "9bcf",
+      "username": "Viktor ",
+      "password": "$2b$10$erLcbp6GSezI0ivLWbKKuuQn6BzDyuHREAccqswJfjMokaGELkdfC",
       "role": "student",
-      "teacherId": 1
-    }
-  ],
-  "teachers": [
-    { "id": 1, "name": "John Smith" },
-    { "id": 2, "name": "Emily Johnson" }
-  ],
-  "grades": [
-    {
-      "id": 1,
-      "studentId": 2,
-      "subject": "Math",
-      "grade": 5
+      "subjects": [
+        {
+          "name": "Мате",
+          "grades": []
+        },
+        {
+          "name": "с",
+          "grades": []
+        },
+        {
+          "name": "VV",
+          "grades": []
+        },
+        {
+          "name": "History ",
+          "grades": [
+            5
+          ]
+        }
+      ]
     },
     {
-      "id": 2,
-      "studentId": 2,
-      "subject": "English",
-      "grade": 6
+      "id": "83fc",
+      "username": "Viktor ",
+      "password": "$2b$10$r9Ya6ONz4s7p.qV6goRaHuOdxMNxbwZFBVppHyZX1E31t.ZJHFbU2",
+      "role": "student",
+      "subjects": [
+        {
+          "name": "Мате",
+          "grades": []
+        },
+        {
+          "name": "с",
+          "grades": []
+        },
+        {
+          "name": "VV",
+          "grades": []
+        },
+        {
+          "name": "History ",
+          "grades": []
+        }
+      ]
+    },
+    {
+      "id": "1771",
+      "username": "Viktor",
+      "password": "$2b$10$79pn5iZiwtXWPSYiSgGr5eHuS46X9PNF/LxDWif.0en9v49Omv6D.",
+      "role": "student",
+      "subjects": [
+        {
+          "name": "Мате",
+          "grades": []
+        },
+        {
+          "name": "с",
+          "grades": []
+        },
+        {
+          "name": "VV",
+          "grades": []
+        },
+        {
+          "name": "History ",
+          "grades": []
+        }
+      ]
+    },
+    {
+      "id": "857d",
+      "username": "Sokolov",
+      "password": "$2b$10$ji.z5zZku.jUd.LMuPLgt.0nhE1Vh1uIw79b4VhygclfeCqQJ88h2",
+      "role": "student",
+      "subjects": [
+        {
+          "name": "Мате",
+          "grades": []
+        },
+        {
+          "name": "с",
+          "grades": []
+        },
+        {
+          "name": "VV",
+          "grades": []
+        },
+        {
+          "name": "History ",
+          "grades": []
+        }
+      ]
+    },
+    {
+      "id": "a6a0",
+      "username": "viktor sokolov",
+      "password": "$2b$10$de5V4G2HMfRrobzNY/QIPeyktoXBDGSCY2ABhgeFBD0QlPQhroFW.",
+      "role": "student",
+      "subjects": [
+        {
+          "name": "Мате",
+          "grades": []
+        },
+        {
+          "name": "с",
+          "grades": []
+        },
+        {
+          "name": "VV",
+          "grades": []
+        },
+        {
+          "name": "History ",
+          "grades": []
+        }
+      ]
+    },
+    {
+      "id": "f7ca",
+      "username": "Viktor",
+      "password": "$2b$10$iz3WZus0ZKBM/kV9.5m1lO1UxYdiXkknO.WAJ0Kv1GTsFN1d9uup.",
+      "role": "student",
+      "subjects": [
+        {
+          "name": "Мате",
+          "grades": []
+        },
+        {
+          "name": "с",
+          "grades": []
+        },
+        {
+          "name": "VV",
+          "grades": []
+        },
+        {
+          "name": "History ",
+          "grades": []
+        }
+      ]
+    },
+    {
+      "id": "aa88",
+      "username": "Vik",
+      "password": "$2b$10$DOtXCFQUutneqUVSuENdE.wABUrujdZodJ9paokGReS9iXo0VGs/.",
+      "role": "teacher"
     }
-  ]
+  ],
+  "students": [],
+  "teachers": []
 }
