@@ -11,4 +11,3 @@
 
 Учител: SokolovV    Парола:dark6386
 Ученик: Viktor      Парола:dark6386
-sdhabdjak
