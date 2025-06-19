@@ -1,70 +1,40 @@
 import React, { useState } from 'react';
-import { TextField, Button, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
+import { TextField, Button, Paper, Typography, Box, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('student'); // Добавяме роля, по подразбиране е student
+  const [role, setRole] = useState('student');
   const navigate = useNavigate();
 
   const handleRegister = async () => {
-    // Проверка дали името на потребителя е празно
-    if (!username || !password) return alert('Моля, попълнете всички полета!');
+    const bcrypt = await import('bcryptjs');
+    const hashedPassword = bcrypt.hashSync(password, 10);
+    const newUser = { username: username.toLowerCase(), password: hashedPassword, role };
 
-    const hashedPassword = await import('bcryptjs').then(bcrypt => bcrypt.hashSync(password, 10));
-    const user = { username: username.toLowerCase(), password: hashedPassword, role };
-
-    // Получаваме текущите потребители от localStorage или инициализираме празен масив
     const users = JSON.parse(localStorage.getItem('users')) || [];
+    if (users.find(u => u.username === newUser.username)) return alert('Потребителското име вече съществува!');
 
-    // Проверка дали потребителят вече съществува
-    if (users.some(u => u.username === user.username)) {
-      return alert('Потребител с това име вече съществува!');
-    }
-
-    // Добавяме новия потребител
-    users.push(user);
+    users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
-    alert('Регистрацията беше успешна!');
-
-    // Навигираме към страницата за вход
+    alert('Регистрацията е успешна!');
     navigate('/');
   };
 
   return (
-    <div>
-      <h2>Регистрация</h2>
-      <TextField
-        label="Потребителско име"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        fullWidth
-      />
-      <TextField
-        label="Парола"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        fullWidth
-      />
-      
-      {/* Добавяме избор на роля */}
-      <FormControl fullWidth>
-        <InputLabel>Роля</InputLabel>
-        <Select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        >
+    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
+      <Paper sx={{ p: 4, maxWidth: 400, width: '100%' }} elevation={3}>
+        <Typography variant="h5" sx={{ mb: 2 }}>Регистрация</Typography>
+        <TextField label="Потребителско име" value={username} onChange={(e) => setUsername(e.target.value)} fullWidth margin="normal" />
+        <TextField label="Парола" type="password" value={password} onChange={(e) => setPassword(e.target.value)} fullWidth margin="normal" />
+        <TextField select label="Роля" value={role} onChange={(e) => setRole(e.target.value)} fullWidth margin="normal">
           <MenuItem value="student">Ученик</MenuItem>
           <MenuItem value="teacher">Учител</MenuItem>
-        </Select>
-      </FormControl>
-
-      <Button onClick={handleRegister} variant="contained" fullWidth>
-        Регистрирай се
-      </Button>
-    </div>
+        </TextField>
+        <Button onClick={handleRegister} variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>Регистрирай се</Button>
+      </Paper>
+    </Box>
   );
 };
 
