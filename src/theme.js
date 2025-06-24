@@ -1,38 +1,21 @@
-// src/theme.js
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    mode: 'light',
     primary: {
       main: '#A8D5BA', // Mint green
-      contrastText: '#2E2E2E',
-    },
-    secondary: {
-      main: '#CBAACB', // Lavender
-      contrastText: '#2E2E2E',
+      contrastText: '#ffffff', // For buttons on AppBar
     },
     background: {
-      default: '#F6FFF8', // Light mint background
-      paper: 'rgba(255, 255, 255, 0.8)', // Card-like backgrounds
+      default: '#F6FFF8',    // Soft mint background
+      paper: '#ffffff',      // For cards, dialogs
     },
     text: {
-      primary: '#2E2E2E',
+      primary: '#2E2E2E',    // Dark text for light backgrounds
     },
   },
   typography: {
-    fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif',
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        containedPrimary: {
-          '&:hover': {
-            backgroundColor: '#94C9AD', // Darker mint for hover
-          },
-        },
-      },
-    },
+    fontFamily: 'Avenir, Helvetica, Arial, sans-serif',
   },
 });
 

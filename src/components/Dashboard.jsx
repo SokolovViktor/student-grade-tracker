@@ -1,4 +1,4 @@
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Button, Paper, Typography, Container, Stack } from '@mui/material';
 import { useState } from 'react';
 
 const Dashboard = () => {
@@ -20,11 +20,32 @@ const Dashboard = () => {
   };
 
   return (
-    <Box component="form" onSubmit={handleAddStudent} sx={{ display: 'flex', flexDirection: 'column', gap: 2, maxWidth: 400, mx: 'auto', mt: 10 }}>
-      <TextField label="Student Name" value={name} onChange={(e) => setName(e.target.value)} required />
-      <TextField label="Grade" value={grade} onChange={(e) => setGrade(e.target.value)} required />
-      <Button type="submit" variant="contained">Add Student</Button>
-    </Box>
+    <Container maxWidth="sm" sx={{ mt: 8 }}>
+      <Paper sx={{ p: 4 }} elevation={3}>
+        <Typography variant="h5" align="center" gutterBottom>
+          Add Student
+        </Typography>
+        <form onSubmit={handleAddStudent}>
+          <Stack spacing={2}>
+            <TextField
+              label="Student Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <TextField
+              label="Grade"
+              value={grade}
+              onChange={(e) => setGrade(e.target.value)}
+              required
+            />
+            <Button type="submit" variant="contained" color="primary">
+              Add Student
+            </Button>
+          </Stack>
+        </form>
+      </Paper>
+    </Container>
   );
 };
 
